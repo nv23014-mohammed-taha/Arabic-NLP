@@ -108,7 +108,7 @@ Results are saved to `results/sentiment_results.csv` and plots to `results/plots
 
 ---
 
-## 🤖 Models
+## Models
 
 | Model | Pre-training Data | Arabic Variety | Params |
 |---|---|---|---|
@@ -154,7 +154,7 @@ A qualitative look at failure cases for the best model (CAMeLBERT-DA) on sentime
 
 ---
 
-## 🔬 What I Learned
+##  What I Learned
 
 - Arabic NLP is not one problem — MSA, Classical, and Dialectal varieties behave very differently and warrant separate models.
 - The gap between Arabic-specific and multilingual models is larger than I expected (~6–10 F1 points), suggesting that cross-lingual transfer still struggles with Arabic's morphological complexity.
@@ -190,7 +190,7 @@ A qualitative look at failure cases for the best model (CAMeLBERT-DA) on sentime
 
 ---
 
-## 📄 License
+##  License
 
 MIT License. Dataset licenses vary — see each dataset's original source.
 
