@@ -1,11 +1,11 @@
-# 🔤 Arabic NLP Benchmark
+# Arabic NLP Benchmark
 
 A systematic evaluation of Arabic language models across multiple downstream NLP tasks.  
 This benchmark compares Arabic-specific models (AraBERT, CAMeLBERT, MARBERT) against multilingual baselines (mBERT, XLM-R) on sentiment analysis, named entity recognition, and question answering.
 
 ---
 
-## 📊 Results
+##  Results
 
 ### Sentiment Analysis — HARD Dataset
 
@@ -22,7 +22,7 @@ This benchmark compares Arabic-specific models (AraBERT, CAMeLBERT, MARBERT) aga
 
 ---
 
-## 🧠 Key Findings
+##  Key Findings
 
 1. **Dialectal pre-training matters** — CAMeLBERT-DA outperforms CAMeLBERT-MSA by ~3 F1 points on HARD (hotel reviews), which are written in Gulf/Egyptian dialect. This directly validates the importance of domain-matched pre-training.
 
@@ -36,7 +36,7 @@ This benchmark compares Arabic-specific models (AraBERT, CAMeLBERT, MARBERT) aga
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 arabic-nlp-benchmark/
@@ -61,7 +61,7 @@ arabic-nlp-benchmark/
 
 ---
 
-## 🚀 Quickstart
+##  Quickstart
 
 ### 1. Clone and install
 
@@ -97,7 +97,7 @@ Results are saved to `results/sentiment_results.csv` and plots to `results/plots
 
 ---
 
-## 🗃️ Datasets
+##  Datasets
 
 | Dataset | Task | Size | Source |
 |---|---|---|---|
@@ -121,7 +121,7 @@ Results are saved to `results/sentiment_results.csv` and plots to `results/plots
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 This project uses [Hydra](https://hydra.cc/) for configuration. Every parameter is overridable from the command line:
 
@@ -138,7 +138,7 @@ python evaluate.py --config-name sentiment evaluation.batch_size=64
 
 ---
 
-## 📉 Error Analysis
+##  Error Analysis
 
 A qualitative look at failure cases for the best model (CAMeLBERT-DA) on sentiment:
 
@@ -163,7 +163,7 @@ A qualitative look at failure cases for the best model (CAMeLBERT-DA) on sentime
 
 ---
 
-## 📚 References
+##  References
 
 ```bibtex
 @inproceedings{antoun2020arabert,
