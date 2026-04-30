@@ -3,7 +3,6 @@
 A systematic evaluation of Arabic language models across multiple downstream NLP tasks.  
 This benchmark compares Arabic-specific models (AraBERT, CAMeLBERT, MARBERT) against multilingual baselines (mBERT, XLM-R) on sentiment analysis, named entity recognition, and question answering.
 
----
 
 ##  Results
 
@@ -20,7 +19,7 @@ This benchmark compares Arabic-specific models (AraBERT, CAMeLBERT, MARBERT) aga
 
 > Full results across all tasks and datasets: [`results/`](results/)
 
----
+
 
 ##  Key Findings
 
@@ -34,7 +33,7 @@ This benchmark compares Arabic-specific models (AraBERT, CAMeLBERT, MARBERT) aga
 
 5. **No single model dominates all tasks** — MARBERT leads on social-media NER (dialectal tweets) while CAMeLBERT-MSA is stronger on formal-register QA.
 
----
+
 
 ##  Repository Structure
 
@@ -59,7 +58,6 @@ arabic-nlp-benchmark/
 └── requirements.txt
 ```
 
----
 
 ##  Quickstart
 
@@ -95,7 +93,6 @@ python evaluate.py --config-name sentiment output.log_wandb=true
 
 Results are saved to `results/sentiment_results.csv` and plots to `results/plots/`.
 
----
 
 ##  Datasets
 
@@ -106,7 +103,7 @@ Results are saved to `results/sentiment_results.csv` and plots to `results/plots
 | [ANERcorp](https://camel.abudhabi.nyu.edu/anercorp/) | NER | 150,286 tokens | News (MSA) |
 | [TyDi QA](https://ai.google.com/research/tydiqa) | QA | 14,805 passages | Wikipedia (MSA) |
 
----
+
 
 ## Models
 
@@ -136,7 +133,7 @@ python evaluate.py --config-name sentiment models.xlmr_large.enabled=false
 python evaluate.py --config-name sentiment evaluation.batch_size=64
 ```
 
----
+
 
 ##  Error Analysis
 
@@ -152,7 +149,7 @@ A qualitative look at failure cases for the best model (CAMeLBERT-DA) on sentime
 
 **Takeaway:** Dialectal pragmatics and sarcasm remain unsolved challenges for current Arabic NLP models.
 
----
+
 
 ##  What I Learned
 
@@ -160,8 +157,6 @@ A qualitative look at failure cases for the best model (CAMeLBERT-DA) on sentime
 - The gap between Arabic-specific and multilingual models is larger than I expected (~6–10 F1 points), suggesting that cross-lingual transfer still struggles with Arabic's morphological complexity.
 - Pre-training data *variety* (which Arabic dialects are covered) matters as much as data *quantity*.
 - Evaluation is hard: label consistency across Arabic NLP datasets is inconsistent, and some "gold" labels show annotator disagreement >20%.
-
----
 
 ##  References
 
@@ -188,13 +183,9 @@ A qualitative look at failure cases for the best model (CAMeLBERT-DA) on sentime
 }
 ```
 
----
 
 ##  License
 
 MIT License. Dataset licenses vary — see each dataset's original source.
 
----
 
-*Part of a series of ML research projects. See also:*  
-*→ [Efficient Transformers](../efficient-transformers) | [Scaling Laws Experiment](../scaling-laws-experiment)*
