@@ -1,0 +1,7 @@
+model,accuracy,f1_macro,f1_weighted,precision,recall,inference_sec,samples_per_sec
+camelbert_da,88.4,87.9,88.2,88.1,87.7,142.3,281
+marbert,87.1,86.5,87.0,86.8,86.2,138.7,288
+camelbert_msa,85.3,84.8,85.1,85.0,84.6,141.2,283
+arabert,84.7,84.1,84.5,84.3,83.9,145.6,274
+xlmr_base,82.2,81.6,82.0,81.8,81.4,158.9,251
+mbert,78.6,77.9,78.4,78.2,77.6,132.4,302

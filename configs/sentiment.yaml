@@ -1,0 +1,76 @@
+# configs/sentiment.yaml
+# ──────────────────────────────────────────────────────────────
+# Hydra configuration for the Arabic Sentiment Analysis task.
+# Run with:  python evaluate.py --config-name sentiment
+# Override:  python evaluate.py task=sentiment models=[arabert,marbert]
+# ──────────────────────────────────────────────────────────────
+
+defaults:
+  - _self_
+
+task: sentiment
+
+dataset:
+  name: hard                   # "hard" | "arsas"
+  split: test
+  text_column: review          # column containing Arabic text
+  label_column: label          # 0 = negative, 1 = positive
+  max_samples: null            # null = use full test set; int = subsample
+
+models:
+  arabert:
+    enabled: true
+    class: AraBERTModel
+    kwargs: {}
+
+  camelbert_msa:
+    enabled: true
+    class: CAMeLBERTModel
+    kwargs:
+      variant: msa-sentiment
+
+  camelbert_da:
+    enabled: true
+    class: CAMeLBERTModel
+    kwargs:
+      variant: da-sentiment
+
+  marbert:
+    enabled: true
+    class: MARBERTModel
+    kwargs:
+      version: "v2"
+
+  mbert:
+    enabled: true
+    class: MultilingualBERTModel
+    kwargs:
+      variant: mbert
+
+  xlmr_base:
+    enabled: true
+    class: MultilingualBERTModel
+    kwargs:
+      variant: xlmr-base
+
+  xlmr_large:
+    enabled: false             # set true if you have enough VRAM
+    class: MultilingualBERTModel
+    kwargs:
+      variant: xlmr-large
+
+evaluation:
+  metrics:
+    - accuracy
+    - f1_macro
+    - f1_weighted
+    - precision
+    - recall
+  batch_size: 32
+
+output:
+  results_dir: results
+  csv_file: results/sentiment_results.csv
+  plots_dir: results/plots
+  log_wandb: false             # set true + wandb login to enable
+  wandb_project: arabic-nlp-benchmark

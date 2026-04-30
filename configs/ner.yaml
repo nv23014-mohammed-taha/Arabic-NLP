@@ -1,0 +1,51 @@
+# configs/ner.yaml
+defaults:
+  - _self_
+
+task: ner
+
+dataset:
+  name: anercorp
+  split: test
+  text_column: tokens
+  label_column: ner_tags
+  max_samples: null
+
+models:
+  arabert:
+    enabled: true
+    class: AraBERTModel
+    kwargs: {}
+
+  camelbert_msa:
+    enabled: true
+    class: CAMeLBERTModel
+    kwargs:
+      variant: msa
+
+  marbert:
+    enabled: true
+    class: MARBERTModel
+    kwargs:
+      version: "v2"
+
+  xlmr_base:
+    enabled: true
+    class: MultilingualBERTModel
+    kwargs:
+      variant: xlmr-base
+
+evaluation:
+  metrics:
+    - f1_micro
+    - f1_macro
+    - precision
+    - recall
+  batch_size: 16
+
+output:
+  results_dir: results
+  csv_file: results/ner_results.csv
+  plots_dir: results/plots
+  log_wandb: false
+  wandb_project: arabic-nlp-benchmark
